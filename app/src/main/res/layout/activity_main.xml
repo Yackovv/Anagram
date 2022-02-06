@@ -14,8 +14,8 @@
         android:text="@string/Nothing"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/filterEditText"
+        app:layout_constraintStart_toStartOf="@+id/filterEditText"
         app:layout_constraintTop_toBottomOf="@+id/filterEditText"
         app:layout_constraintVertical_bias="0.441" />
 
@@ -28,7 +28,9 @@
         android:hint="@string/TapWord"
         android:inputType="textPersonName"
         android:text="@string/Nothing"
+        app:layout_constraintBottom_toTopOf="@+id/filterEditText"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,13 +41,13 @@
         android:layout_marginTop="149dp"
         android:layout_marginBottom="52dp"
         android:ems="10"
+        android:hint="@string/Expection"
         android:inputType="textPersonName"
         android:text="@string/Nothing"
-        android:hint="@string/Expection"
         app:layout_constraintBottom_toTopOf="@+id/outputTextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/inputStringTextView"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/inputStringTextView"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
