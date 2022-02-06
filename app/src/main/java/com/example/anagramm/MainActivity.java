@@ -58,6 +58,27 @@ public class MainActivity extends AppCompatActivity {
     private EditText mFilterEditText;
     private TextView mOutputStringTextView;
 
+    private final TextWatcher textWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            String inputString = mInputStringEditView.getText().toString().trim();
+            String filter = mFilterEditText.getText().toString().trim();
+            mOutputStringTextView.setText(Anagram.anagram(inputString, filter));
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,40 +88,9 @@ public class MainActivity extends AppCompatActivity {
         mFilterEditText = findViewById(R.id.filterEditText);
         mOutputStringTextView = findViewById(R.id.outputTextView);
 
-        mFilterEditText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
 
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        mInputStringEditView.addTextChangedListener(textWatcher);
+        mFilterEditText.addTextChangedListener(textWatcher);
 
-                String inputString = mInputStringEditView.getText().toString().trim();
-                String filter = mFilterEditText.getText().toString().trim();
-                mOutputStringTextView.setText(Anagram.anagram(inputString, filter));
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-            }
-        });
-
-        mInputStringEditView.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                String inputString = mInputStringEditView.getText().toString();
-                String filter = mFilterEditText.getText().toString();
-                mOutputStringTextView.setText(Anagram.anagram(inputString, filter));
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-            }
-        });
     }
 }
