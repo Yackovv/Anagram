@@ -9,7 +9,8 @@
     <EditText
         android:id="@+id/inputStringTextView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
+        android:textSize="40sp"
         android:hint="@string/TapWord"
         android:text="@string/Nothing"
         app:layout_constraintBottom_toTopOf="@+id/filterEditText"
@@ -21,8 +22,8 @@
     <TextView
         android:id="@+id/outputTextView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:layout_height="70dp"
+        android:textSize="40sp"
         android:text="@string/Nothing"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +35,8 @@
     <EditText
         android:id="@+id/filterEditText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
+        android:textSize="40sp"
         android:hint="@string/Expection"
         android:inputType="textPersonName"
         android:text="@string/Nothing"
